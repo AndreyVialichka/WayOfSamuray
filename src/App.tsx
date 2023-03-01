@@ -1,11 +1,14 @@
+import Content from './components/Content/content';
 import Header from './components/header/Header';
-import Technologies from './components/main/Technologies';
+import NavBar from './components/NavbarComponents/NavBar';
+import './App.css'
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Technologies/>
+      <NavBar/>
+      <Content/>
     </div>
   );
 }
