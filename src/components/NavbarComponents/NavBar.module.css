@@ -1,4 +1,13 @@
 .sidebar {
     grid-area: nav;
     background-color: bisque;
+    padding: 20px;
   }
+
+.link a {
+  color: azure;
+}
+
+.link a.acitveLink {
+  color: rgb(14, 53, 53);
+}

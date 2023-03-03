@@ -1,20 +1,21 @@
-import Avatar from './AvatarAndDescriptionComp/Avatar';
+import { BrowserRouter, Route } from 'react-router-dom';
 import  classes from './Content.module.css'
-import MyPost from './MyPostComponents/MyPost';
-import NewPost from './NewPostComp/NewPost';
-import Post from './PostsComp/Post';
+import Dialogs from './Dialogs/Dialogs';
+import Music from './Music/Music';
+import News from './News/News';
+import Profile from './Profile/Profile';
+import Settings from './Settings/Settings';
+
+
 function Content() {
-    return (
-      <div className= {classes.content} >
-        <img src="https://img.freepik.com/free-photo/abstract-grunge-decorative-relief-navy-blue-stucco-wall-texture-wide-angle-rough-colored-background_1258-28311.jpg?w=2000">
-        </img>
-        <Avatar/>
-        <MyPost />
-        <NewPost />
-        <Post
-          likeNumber = {14} 
-          text = {"Some Text Description"}/>
-      </div>
+    return ( 
+        <div className= {classes.content} >
+          <Route path='/profile' component = {Profile} />
+          <Route path='/dialogs' component = {Dialogs} />
+          <Route path='/news' component = {News} />
+          <Route path='/music' component = {Music} />
+          <Route path='/settings' component = {Settings} />
+        </div>
     );
   }
   
