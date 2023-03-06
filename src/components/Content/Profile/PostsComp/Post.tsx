@@ -10,7 +10,7 @@ const Post: React.FC<PropsType> = (props) => {
     return (
         <div>
           <p>{props.text}</p>
-          <span>Lile{props.likeNumber}</span>
+          <span>Like{props.likeNumber}</span>
         </div>
     );
   }

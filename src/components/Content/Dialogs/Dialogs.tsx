@@ -3,22 +3,38 @@ import DialogsMessage from './DialogMessage/DialogMessage';
 import DialogsName from './DialogName/DialogName';
 import  classes from './Dialogs.module.css'
 
+type PropsType = {
+  names: Array<NamesType>
+  messages: Array<MessagesType>
+}
 
-const Dialogs: React.FC = (props) => {
+
+type NamesType = {
+  id: number
+  name : string
+}
+
+type MessagesType = {
+  id: number
+  Message : string
+}
+
+const Dialogs: React.FC<PropsType> = (props) => {
     return (
         <div className={classes.dialogs}>
           <div className={classes.items}>
-            <DialogsName name ="Alex"/>
-            <DialogsName name ="Alex"/>
-            <DialogsName name ="Alex"/>
-            <DialogsName name ="Alex"/>
+            {
+              props.names.map(nameItem => {
+                return <DialogsName name = {nameItem.name} />
+              })
+            }
           </div>
           <div className={classes.messages} >
-            <DialogsMessage message='hi' />
-            <DialogsMessage message='hi' />
-            <DialogsMessage message='hi' />
-            <DialogsMessage message='hi' />
-            <DialogsMessage message='hi' />
+            {
+              props.messages.map(messageItem => {
+                return <DialogsMessage message={messageItem.Message} />
+              })
+            }
           </div>
         </div>
     );
