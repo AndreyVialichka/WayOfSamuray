@@ -48,3 +48,13 @@ export const STATE = {
         ]
     }
 }
+
+export let addPost = (userPost : string) => {
+    let newUserPost = {
+        id:3,
+        likeNumber:0,
+        text: userPost
+    }
+
+    STATE.ProfilePage.statePost.push(newUserPost)
+}

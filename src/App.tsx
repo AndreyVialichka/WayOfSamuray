@@ -3,7 +3,7 @@ import Header from './components/header/Header';
 import NavBar from './components/NavbarComponents/NavBar';
 import './App.css'
 import { BrowserRouter } from 'react-router-dom';
-import { STATE } from './redux/state';
+import { addPost, STATE } from './redux/state';
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
         statePost ={STATE.ProfilePage.statePost}
         stateNames = {STATE.DialogsPage.stateNames}
         stateMessages = {STATE.DialogsPage.stateMessages}
+        addPost = {addPost}
         />
     </BrowserRouter>
     </div>

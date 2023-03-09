@@ -12,6 +12,7 @@ type ContentProps = {
   statePost : Array<StatePostType>
   stateNames: Array<StateNamesType>
   stateMessages: Array<StateMessageType>
+  addPost: (value : string) => void
 }
 
 
@@ -34,7 +35,7 @@ type StateMessageType = {
 function Content(props:ContentProps) { 
     return ( 
         <div className= {classes.content} >
-          <Route path='/profile' render= { () => <Profile posts ={props.statePost}/> } />
+          <Route path='/profile' render= { () => <Profile posts ={props.statePost} addPost = {props.addPost}/> } />
           <Route path='/dialogs'render= { () => <Dialogs names ={props.stateNames} messages ={props.stateMessages} /> } />
           <Route path='/news' component = {News} />
           <Route path='/music' component = {Music} />

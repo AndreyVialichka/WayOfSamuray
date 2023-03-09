@@ -6,6 +6,7 @@ import Post from './PostsComp/Post';
 
 type ProfileProps = {
   posts:Array<PostsItem>
+  addPost: (value : string) => void
 }
 
 type PostsItem = {
@@ -21,7 +22,9 @@ function Profile(props:ProfileProps) {
         </img>
         <Avatar/>
         <MyPost />
-        <NewPost />
+        <NewPost 
+          addPost = {props.addPost}
+        />
         {
           props.posts.map((postItem) => {
             return <Post
